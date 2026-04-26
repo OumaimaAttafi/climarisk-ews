@@ -1,52 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Try the Model</title>
-
-<style>
-body {
-  font-family: Arial;
-  background: #0f172a;
-  color: white;
-  text-align: center;
-  padding: 40px;
-}
-
-input {
-  padding: 10px;
-  margin: 5px;
-}
-
-button {
-  padding: 10px 20px;
-  background: #52a832;
-  color: white;
-  border: none;
-}
-</style>
+<title>Try Model</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-<h1>Test the Model</h1>
+<h1>Test Climate Risk Model</h1>
 
-<p>Enter sample values:</p>
+<form action="/predict" method="post">
 
-<input placeholder="ROA"><br>
-<input placeholder="ROE"><br>
-<input placeholder="Z-score"><br>
+<input name="ROA" placeholder="ROA" required>
+<input name="ROE" placeholder="ROE" required>
+<input name="Z" placeholder="Z-score" required>
 
-<button onclick="predict()">Predict Risk</button>
+<input name="LTD" placeholder="LTD_lag1" required>
+<input name="HTD" placeholder="HTD_lag1" required>
+<input name="ERD" placeholder="ERD_lag1" required>
+<input name="EED" placeholder="EED_lag1" required>
 
-<h2 id="result"></h2>
+<input name="GCPRI" placeholder="GCPRI" required>
+<input name="CO2" placeholder="CO2" required>
+<input name="RE" placeholder="Renewable Energy" required>
 
-<script>
-function predict(){
-  document.getElementById("result").innerText =
-    "⚠️ Demo: Connect ML model later";
-}
-</script>
+<button type="submit">Predict</button>
+
+</form>
+
+<h2>{{ prediction_text }}</h2>
 
 </body>
 </html>
