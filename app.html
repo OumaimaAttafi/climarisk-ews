@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Try the Model</title>
+
+<style>
+body {
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  padding: 40px;
+}
+
+input {
+  padding: 10px;
+  margin: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background: #52a832;
+  color: white;
+  border: none;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Test the Model</h1>
+
+<p>Enter sample values:</p>
+
+<input placeholder="ROA"><br>
+<input placeholder="ROE"><br>
+<input placeholder="Z-score"><br>
+
+<button onclick="predict()">Predict Risk</button>
+
+<h2 id="result"></h2>
+
+<script>
+function predict(){
+  document.getElementById("result").innerText =
+    "⚠️ Demo: Connect ML model later";
+}
+</script>
+
+</body>
+</html>
